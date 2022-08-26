@@ -1,26 +1,31 @@
-const express = require('express')
-const mongoose = require('mongoose');
-const catchAsync = require('../utils/catchAsync')
-const { route } = require('./campgrounds');
-const router = express.Router({ mergeParams: true })
+const express = require("express");
+const mongoose = require("mongoose");
+const catchAsync = require("../utils/catchAsync");
+const { route } = require("./restaurants");
+const router = express.Router({ mergeParams: true });
 
+const reviews = require("../controllers/review");
 
-
-const reviews = require('../controllers/review')
-
-const { ensureLogin, validateReview, isReviewAuthor } = require('../middleware')
+const {
+  ensureLogin,
+  validateReview,
+  isReviewAuthor,
+} = require("../middleware");
 
 // middleware that is specific to this router
 router.use((req, res, next) => {
-    next()
-})
-
-
+  next();
+});
 
 // post new review
-router.post('/', ensureLogin,validateReview, catchAsync(reviews.createReview))
+router.post("/", ensureLogin, validateReview, catchAsync(reviews.createReview));
 
 // delete review
-router.delete('/:reviewId', ensureLogin, isReviewAuthor, catchAsync(reviews.deleteReview))
+router.delete(
+  "/:reviewId",
+  ensureLogin,
+  isReviewAuthor,
+  catchAsync(reviews.deleteReview)
+);
 
-module.exports = router
+module.exports = router;

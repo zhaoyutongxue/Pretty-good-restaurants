@@ -5,7 +5,7 @@
   <h1 class="text-center">New Restaurant</h1>
   <div class="col-6 offset-3">
     <form
-      action="/campgrounds"
+      action="/restaurants"
       method="POST"
       novalidate
       class="validation-form"
@@ -17,7 +17,7 @@
           class="form-control"
           type="text"
           id="title"
-          name="campground[title]"
+          name="restaurant[title]"
           required
         />
         <div class="valid-feedback">Looks good!</div>
@@ -39,7 +39,7 @@
           class="form-control"
           type="text"
           id="location"
-          name="campground[location]"
+          name="restaurant[location]"
           value="Sydney,Australia"
           required
         />
@@ -82,7 +82,7 @@
             placeholder="0.00"
             aria-label="price"
             aria-describedby="price-label"
-            name="campground[price]"
+            name="restaurant[price]"
             required
           />
         </div>
@@ -95,7 +95,7 @@
           class="form-control"
           type="text"
           id="description"
-          name="campground[description]"
+          name="restaurant[description]"
           required
         ></textarea>
         <div class="valid-feedback">Looks good!</div>
@@ -105,7 +105,7 @@
         <button class="btn btn-success">Add Restaurant</button>
       </div>
     </form>
-    <a href="/campgrounds">All Restaurant</a>
+    <a href="/restaurants">All Restaurant</a>
   </div>
 </div>
 

@@ -18,7 +18,7 @@ const localStrategy = require("passport-local");
 const User = require("./models/user");
 // const helmet = require('helmet')
 
-const campgroundsRoute = require("./routes/campgrounds");
+const restaurantsRoute = require("./routes/restaurants");
 const reviewsRoute = require("./routes/reviews");
 const usersRoute = require("./routes/users");
 
@@ -110,8 +110,10 @@ app.use((req, res, next) => {
 
 // use the routers
 app.use("/", usersRoute);
-app.use("/campgrounds", campgroundsRoute);
-app.use("/campgrounds/:id/reviews", reviewsRoute);
+// app.use("/restaurants", restaurantsRoute);
+app.use("/restaurants", restaurantsRoute);
+// app.use("/restaurants/:id/reviews", reviewsRoute);
+app.use("/restaurants/:id/reviews", reviewsRoute);
 
 app.get("/fakeUser", async (req, res) => {
   const user = new User({ email: "colt@gmail.com", username: "colt " });
@@ -119,11 +121,11 @@ app.get("/fakeUser", async (req, res) => {
   res.send(newUser);
 });
 
-// Home page, empty for now
+// Home page
 app.get(
   "/home",
   catchAsync(async (req, res) => {
-    res.render("campgrounds/home");
+    res.render("restaurants/home");
   })
 );
 
@@ -142,5 +144,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(port, () => {
-  console.log(`Yelp camp app listening on port ${port}`);
+  console.log(`PrettyGoodRestaurant app on port ${port}`);
 });
