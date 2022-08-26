@@ -1,55 +1,64 @@
 <% layout('layouts/boilerplate')%>
 <title>Register</title>
-    <div class="container d-flex justify-content-center align-items-center">
-        <div class="row">
-            <div class="col-6 offset-3">
-                <div class="card shadow mb-3">
-                    <img class="card-img-top"
-                        src="https://res.cloudinary.com/dcc4gmbgx/image/upload/v1657536664/YelpCamp/Stephen-Curry-Warriors-Hero-1_b511jd.png"
-                        alt="Card image cap">
-                    <div class="card-body">
-                        <h4>Register</h4>
-                        <form action="/register" class="validation-form" method="post" novalidate>
-                            <div class="mb-3">
-                                <label class="form-label" for="username">Username</label>
-                                <input class="form-control" type="text" id="username" name="username" required
-                                    autofocus>
-                                <div class=" valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label" for="email">Email</label>
-                                <input class="form-control" type="email" id="email" name="email" required>
-                                <div class=" valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label" for="password">Password</label>
-                                <input class="form-control" type="password" id="password" name="password" required>
-                                <div class=" valid-feedback">
-                                    Looks good!
-                                </div>
-                            </div>
-                            <button class='btn btn-success'>Register</button>
-                        </form>
-                    </div>
-                </div>
+<div class="container d-flex justify-content-center align-items-center">
+  <div class="row">
+    <div class="col-6 offset-3">
+      <div class="card shadow mb-3">
+        <img
+          class="card-img-top"
+          src="https://res.cloudinary.com/dcc4gmbgx/image/upload/v1659968564/YelpCamp/login-photo_hnzdle.jpg"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h4>Register</h4>
+          <form
+            action="/register"
+            class="validation-form"
+            method="post"
+            novalidate
+          >
+            <div class="mb-3">
+              <label class="form-label" for="username">Username</label>
+              <input
+                class="form-control"
+                type="text"
+                id="username"
+                name="username"
+                required
+                autofocus
+              />
+              <div class="valid-feedback">Looks good!</div>
             </div>
+            <div class="mb-3">
+              <label class="form-label" for="email">Email</label>
+              <input
+                class="form-control"
+                type="email"
+                id="email"
+                name="email"
+                required
+              />
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="password">Password</label>
+              <input
+                class="form-control"
+                type="password"
+                id="password"
+                name="password"
+                required
+              />
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+            <button class="btn btn-success">Register</button>
+          </form>
         </div>
+      </div>
     </div>
+  </div>
+</div>
 
-
-
-
-
-
-
-
-
-    <div class="row">
-        <div class="col-6 offset-3">
-
-        </div>
-    </div>
+<div class="row">
+  <div class="col-6 offset-3"></div>
+</div>
