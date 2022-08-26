@@ -1,35 +1,42 @@
 body {
-    height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url("https://images.unsplash.com/photo-1559521783-1d1599583485?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
-    background-size: cover;
-    background-position: center;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://res.cloudinary.com/dcc4gmbgx/image/upload/v1661436705/YelpCamp/home_resturant_ru7mht.jpg");
+
+  background-size: cover;
+  background-position: center;
 }
 
 .cover-container {
-    max-width: 60vw;
+  max-width: 60vw;
 }
 
 .nav-link {
-    color: rgba(225, 225, 225, 0.5);
-    font-size: large;
-    /* first set up a transparent border bottom */
-    border-bottom: 0.25rem solid transparent;
+  color: rgba(225, 225, 225, 0.5);
+  font-size: large;
+  /* first set up a transparent border bottom */
+  border-bottom: 0.25rem solid transparent;
 }
 
 .nav-link:hover {
-    /* reveal it  */
-    border-bottom-color: rgba(225, 225, 225, 0.5);
-    /* overwrite color */
-    color: rgba(225, 225, 225, 0.5);
+  /* reveal it  */
+  border-bottom-color: rgba(225, 225, 225, 0.5);
+  /* overwrite color */
+  color: rgba(225, 225, 225, 0.5);
 }
 
 .nav-link.active {
-    color: white;
-    border-bottom-color: white
+  color: white;
+  border-bottom-color: white;
+}
+
+.title,
+.title:hover {
+  color: white;
+  text-decoration: none;
 }
 
 .btn-secondary,
 .btn-secondary:hover {
-    color: black;
+  color: black;
 }
