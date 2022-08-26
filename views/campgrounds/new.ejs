@@ -1,7 +1,8 @@
 <% layout('layouts/boilerplate')%>
-<title>Add New Campground</title>
+
+<title>Add New Restaurant</title>
 <div class="row">
-  <h1 class="text-center">New Campground</h1>
+  <h1 class="text-center">New Restaurant</h1>
   <div class="col-6 offset-3">
     <form
       action="/campgrounds"
@@ -23,7 +24,17 @@
       </div>
 
       <div class="mb-3">
-        <label class="form-label" for="location">Location</label>
+        <label class="form-label" for="location">Address</label
+        ><a
+          tabindex="0"
+          class="btn btn-sm btn-success"
+          role="button"
+          data-bs-toggle="popover"
+          data-bs-trigger="focus"
+          data-bs-title="Restaurant Address"
+          data-bs-content="Detailed address is encouraged, a pin will be added to the map. "
+          >?</a
+        >
         <input
           class="form-control"
           type="text"
@@ -34,28 +45,34 @@
         />
         <div class="valid-feedback">Looks good!</div>
       </div>
-      <div class="input-group mb-3">
-        <input
-          type="file"
-          class="form-control"
-          id="image"
-          name="image"
-          id=""
-          multiple
-        />
-        <label class="input-group-text" for="image">Upload</label>
-      </div>
-      <!-- <input type="file" name="image" id="" multiple> -->
-      <!-- <div class="mb-3">
-                    <label class="form-label" for="image">Image Url</label>
-                    <input class="form-control" type="text" id="image" name="campground[image]" required>
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
-                </div> -->
 
       <div class="mb-3">
-        <label class="form-label" for="price">Campground Price</label>
+        <label class="form-label">Add Restaurant Photo</label>
+        <a
+          tabindex="0"
+          class="btn btn-sm btn-success"
+          role="button"
+          data-bs-toggle="popover"
+          data-bs-trigger="focus"
+          data-bs-title="Restaurant Photos"
+          data-bs-content="Note that you can select multiple photos"
+          >?</a
+        >
+        <div class="input-group mb-3">
+          <input
+            type="file"
+            class="form-control"
+            id="image"
+            name="image"
+            id=""
+            multiple
+          />
+          <label class="input-group-text" for="image">Upload</label>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="price">Average Price</label>
         <div class="input-group">
           <span class="input-group-text" id="price-label">$</span>
           <input
@@ -85,9 +102,21 @@
       </div>
 
       <div class="mb-3">
-        <button class="btn btn-success">Add Campground</button>
+        <button class="btn btn-success">Add Restaurant</button>
       </div>
     </form>
-    <a href="/campgrounds">All Campgrounds</a>
+    <a href="/campgrounds">All Restaurant</a>
   </div>
 </div>
+
+<script>
+  const popoverTriggerList = document.querySelectorAll(
+    '[data-bs-toggle="popover"]'
+  );
+  const popoverList = [...popoverTriggerList].map(
+    (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
+  );
+  const popover = new bootstrap.Popover(".popover-dismiss", {
+    trigger: "focus",
+  });
+</script>
