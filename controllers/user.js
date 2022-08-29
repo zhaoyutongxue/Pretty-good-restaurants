@@ -15,7 +15,7 @@ module.exports.register = async (req, res, next) => {
     const newUser = await User.register(user, password);
     req.login(newUser, (err) => {
       if (err) return next(err);
-      req.flash("success", "welcome to yelp-camp!");
+      req.flash("success", "Welcome to PrettyGoodRestaurants!");
       res.redirect("/restaurants");
     });
   } catch (e) {
@@ -26,7 +26,7 @@ module.exports.register = async (req, res, next) => {
 };
 
 module.exports.login = (req, res) => {
-  req.flash("success", "welcome back!");
+  req.flash("success", "Welcome back!");
   const redirectUrl = req.session.returnTo || "/restaurants";
   delete req.session.returnTo;
   res.redirect(redirectUrl);
